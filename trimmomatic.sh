@@ -4,9 +4,12 @@ ls -1 */*/*1.fq.gz| perl -pe 's/^raw_data\/(.+)\/(.+)_1.fq.gz/java \-jar \~\/myP
     \-threads 3 \\\
     \.\/raw\_data\/$1\/$2_1\.fq\.gz \.\/raw\_data\/$1\/$2_2\.fq\.gz \\\
     \.\/trimmed\/$2_1_paired.fq.gz \.\/trimmed\/$2_1_unpaired.fq.gz  \.\/trimmed\/$2_2_paired.fq.gz \.\/trimmed\/$2_2_unpaired.fq.gz \\\
-    LEADING\:3 TRAILING\:3 SLIDINGWINDOW\:4\:15 MINLEN\:75 \&\> \.\/logs\/$2_trim\.log & \n/g'
+    LEADING\:3 TRAILING\:3 SLIDINGWINDOW\:4\:15 MINLEN\:75 \&\> \.\/logs\/$2_trim\.log & \n/g' > trimmomatic.sh
+    
+# run it
+bash trimmomatic.sh
 
 #################################################################################################################################################
 
-
+# copy of the commands inside trimmomatic.sh
     
