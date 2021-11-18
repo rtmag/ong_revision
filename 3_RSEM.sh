@@ -10,7 +10,7 @@ ls -1 STAR/*bam | perl -pe 's/^STAR\/(.+)_Aligned.toTranscriptome.out.bam/\~\/my
     \-p 5 \-\-paired\-end \-\-bam \-\-estimate\-rspd \-\-output\-genome\-bam \\\
     \.\/STAR\/$1_Aligned.toTranscriptome.out.bam \\\
     \~\/resources\/RSEM\_REF\_GRCh38\/GRCh38 \\\
-    RSEM\/RSEM\_$1 &\n/g' > RSEM.sh
+    RSEM\/RSEM\_$1 &> \.\/logs\/RSEM\_$1\.log &\n/g' > RSEM.sh
 
 # run it
 bash RSEM.sh
