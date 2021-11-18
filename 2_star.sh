@@ -1,7 +1,7 @@
 ################################################################################################################################################
 #  gen the commands
 ls -1 trimmed/*1_paired* | perl -pe 's/^trimmed\/(.+)_1_paired.fq.gz/STAR \-\-runThreadN 60 \-\-readFilesCommand zcat \-\-quantMode TranscriptomeSAM \\\
-    \-\-genomeDir \/root\/resources\/genomeGRCh38\_genecode_out\/ \\\    
+    \-\-genomeDir \/root\/resources\/genomeGRCh38\_genecode_out\/ \\\
     \-\-readFilesIn \.\/trimmed\/$1_1_paired.fq.gz \.\/trimmed\/$1_2_paired.fq.gz \\\
     \-\-outFileNamePrefix \.\/STAR\/$1\_\n/g' > STAR.sh
 
